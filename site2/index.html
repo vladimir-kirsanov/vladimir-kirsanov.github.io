@@ -1,1 +1,866 @@
-site2
+
+<!DOCTYPE html>
+<html>
+<head>
+
+ <meta charset="utf-8" />
+  <title>products</title>
+  <!--[if IE]>
+   <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="http://code.jquery.com/jquery-1.8.2.js"></script>
+<script src="http://code.jquery.com/ui/1.9.1/jquery-ui.js"></script>
+ 
+   
+<link id="pagestyle" rel="stylesheet" type="text/css" href="grid.css">
+
+
+
+
+<script>
+function swapStyleSheet(sheet){
+document.getElementById('pagestyle').setAttribute('href', sheet);
+}
+</script>
+
+
+<style>
+     .header-list ul {
+        width: 150px; /* Ширина меню */
+        list-style: none; /* Для списка убираем маркеры */
+        margin-left: 50px; /* Нет отступов вокруг */
+		margin-top: 0px;
+        padding: 0; /* Убираем поля вокруг текста */
+        font-family: Arial, sans-serif; /* Рубленый шрифт для текста меню */
+        font-size: 10pt; /* Размер названий в пункте меню */
+      }
+     .header-list li ul {
+        position: absolute; /* Подменю позиционируются абсолютно */
+        display: none; /* Скрываем подменю */
+        margin-left: 60px; /* Сдвигаем подменю вправо */
+        margin-top: -5px; /* Сдвигаем подменю вверх */
+		
+		
+      }
+      .header-list li a {
+        width	:100px; 
+
+       font-family: Arial, sans-serif; /* Рубленый шрифт для текста меню */
+        font-size: 10pt; /* Размер названий в пункте меню */
+
+		
+        display: block; /* Ссылка как блочный элемент */
+        padding: 1px; /* Поля вокруг надписи */
+        text-decoration: none; /* Подчеркивание у ссылок убираем */
+        color: #666; /* Цвет текста */
+        border: 1px solid #ccc; /* Рамка вокруг пунктов меню */
+        background-color:  #dff2f3; /* Цвет фона */
+        border-bottom: none; /* Границу снизу не проводим */
+      }
+      .header-list li a:hover {
+        color: #000; /* Цвет текста активного пункта */
+        background-color: #fff; /* Цвет фона активного пункта */
+      }    
+      .header-list li:hover ul {
+        display: block; /* При выделении пункта курсором мыши отображается подменю */
+      }
+       .brd {
+        border-bottom: 1px solid #ccc; /* Линия снизу */
+      }
+	  .header-list #link2:hover #link3 {
+        display: block; /* При выделении пункта курсором мыши отображается подменю */
+      }
+	  
+	   
+	 .header-list #link3{
+	  display: block;
+	  }
+	 
+	  
+	.header-button .dropdown  .dropbtn {
+    background-color: #dff2f3;
+    color: #000;
+    padding-bottom: 1px;
+    font-size: 10pt;line-height: 10pt;
+    border: 2px solid  #bbbbbb;
+    cursor: pointer;
+	}  
+	  
+	  
+	  
+	.header-list .dropdown  .dropbtn {
+    background-color: #dff2f3;
+    color: #000;
+    padding-bottom: 5px;padding-top: 2px;
+    font-size: 11pt;line-height: 10pt;
+    border: 2px solid  #bbbbbb;
+    cursor: pointer;
+	}
+	.header-list .dropdown .dropbtn:hover #menu {
+    display: block;
+}
+
+/* Изменить цвет фона выпадающего кнопка при отображении выпадающего списка */
+ .header-list  .dropdown .dropbtn:hover  {
+    background-color: #fff;
+	}
+.header-list  #menu{
+	  display: none;
+	  }	
+	
+.header-list  .dropdown {
+    position: relative;
+    display: inline-block;
+}
+	/* Показать выпадающее меню при наведении */
+   .header-list  .dropdown:hover #menu {
+    display: block;
+}
+
+/* Изменить цвет фона выпадающего кнопка при отображении выпадающего списка */
+.header-list .dropdown:hover .dropbtn {
+    background-color: #dff2f3;
+}
+
+.sortable-ul .ui-sortable-helper {
+	opacity: 0.8;
+}
+textarea{
+position: absolute;
+width: 90%;
+height: 50%;
+top: 90px;
+left: 5%;
+padding-top: 4px;
+padding-left: 10px;
+font-family: Raleway;
+font-style: normal;
+font-weight: normal;
+font-size: 16px;
+line-height: normal;
+
+color: rgba(17, 63, 103, 0.5);
+border: 1px solid rgba(17, 63, 103, 0.5);
+box-sizing: border-box;
+
+}
+
+
+
+.frectangle_5 {
+position: absolute;
+width: 70%;
+height: 50%;
+top: 90px;
+left: 5%;
+padding-top: 4px;
+padding-left: 10px;
+font-family: Raleway;
+font-style: normal;
+font-weight: normal;
+font-size: 16px;
+line-height: normal;
+
+color: rgba(17, 63, 103, 0.5);
+border: 1px solid rgba(17, 63, 103, 0.5);
+box-sizing: border-box;
+border-radius: 25px;
+}
+
+
+.frectangle_5_3:hover {
+
+
+border: 2px solid rgba(17, 63, 103, 0);
+background:linear-gradient(180deg, rgba(184, 122, 23, 0.1) 0%, #f9b041 100%);
+border-radius: 25px;
+}
+
+.frectangle_5_3{
+position: absolute;
+display:  block;
+width: 70%;
+height: 8%;
+top: 285px;
+left: 15%;
+padding-top: 3px;
+padding-left: 5px;
+font-family: Raleway;
+font-style: normal;
+font-weight: 600;
+font-size: 16px;
+line-height: normal;
+color: #fff;
+line-height: normal;
+text-align: center;
+border: 2px solid rgba(17, 63, 103, 0);
+background: linear-gradient(180deg, rgba(184, 122, 23, 0.9) 0%, #f9b041 50%);
+border-radius: 25px;
+cursor:pointer;
+}
+
+				
+
+
+
+.title1 {
+	position: absolute;
+width: 100%;
+height: 60px;
+top: 0px;
+left: 0%;
+padding-top: 15px;
+padding-left: 5px;
+font-family: Raleway;
+font-style: normal;
+font-weight: 600;
+font-size: 16px;
+line-height: normal;
+text-align: center;
+ border-top-left-radius:16px;border-top-right-radius:16px;
+    box-sizing: border-box;
+color: #fff;
+
+
+/* Amin */
+background: linear-gradient(180deg, rgba(184, 122, 23, 0.85) 0%, #f9b041 100%);
+
+}
+.title2 {
+	position: absolute;
+width: 100%;
+height: 60px;
+top: 325px;
+left: 0%;
+padding-top: 10px;
+padding-left: 10px;
+font-family: Raleway;
+font-style: normal;
+font-weight: 600;
+font-size: 16px;
+line-height: normal;
+text-align: center;
+
+color: #fff;
+
+box-sizing: border-box;
+border-bottom-left-radius:16px;border-bottom-right-radius:16px;
+/* Amin */
+background: linear-gradient(180deg, rgba(184, 122, 23, 0.85) 0%, #f9b041 100%);
+
+}
+.iw-modal {
+	opacity: 0; /*изначально этот блок должен быть прозрачным*/ 
+	background: rgba(0,0,0,0.4); /*задаём цвет фона*/
+	pointer-events: none; /*делаем чтобы по элементу нельзя было кликнуть когда он прозрачный*/ 
+ 	position: fixed; 
+    top: 0px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 9999;
+	transition: all 0.5s ease;
+    margin: 0;
+    padding: 0;
+}
+
+.iw-modal:target {
+    opacity: 1; /*при клике окно становится видимым*/
+	pointer-events: auto; /*теперь по окну можно кликать мышкой*/
+    overflow-y: auto; /*прокрутка по вертикли страницы*/
+}
+
+.iw-modal-wrapper {
+	position:relative;
+	margin-left:0px; /*выравниваем окно по центру по горизонтали*/
+	margin-top:0; /*отступ сверху можно задавать в px, % или vh*/
+width: 100%;
+  height:100%;
+
+
+}
+
+
+
+
+
+/*CSS-свойства заголовка модального окна */
+.iw-modal-header {
+    padding-left: 0px;/*внутренний отступ*/
+    background-color: transparent;/*цвет фона*/background-color: rgba(255,255,255,1); 
+	position:relative;
+	 width: 280px;
+  height: 380px;
+  padding: 0px; left:20%; top:100px;
+  display: block; 
+/* background:transparent ; /*цвет фона
+ 
+   
+border: 1px solid  red;
+ */
+   border-radius: 16px;
+    box-sizing: border-box;
+   /*радиус скругления углов
+    background-image: url(../Форма_desktop.png);
+	background-position: 50% 50%;
+
+-webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+
+
+ 
+background-repeat: no-repeat;
+background-attachment: scroll;	*/ 
+}
+
+
+/*CSS для кнопки background-size: contain;закрытия окна*/
+.iw-close {
+    position:absolute;	
+	
+
+
+	top:7px; /*отступ сверху*/
+	right:18px; /*отступ справа*/
+    font-size: 25px; /*размер шрифта*/font-weight: bold;
+    color: #fff; /*цвет шрифта*/
+    text-decoration: none;  
+	z-index: 9999;
+}
+
+.iw-close:hover, .iw-close:focus {
+    color: red; /*цвет шрифта при наведении*/
+    cursor: pointer;
+	-webkit-transform: scale(1.1);
+	 -moz-transform: scale(1.1);
+	 -o-transform: scale(1.1);
+	-webkit-transition: all 0.1s ease;
+	-moz-transition: all 0.1s ease;
+	transition: all 0.1s ease;
+	
+}
+@media only screen and (max-width: 455px) {
+.iw-modal-header {
+    padding-left: 0px;/*внутренний отступ*/
+    background-color: transparent;/*цвет фона*/background-color: rgba(255,255,255,1); 
+	position:relative;
+	 width: 280px;
+  height: 380px;
+  padding: 0px; left:0%; top:100px;
+  display: block; 
+/* background:transparent ; /*цвет фона
+ 
+   
+border: 1px solid  red;
+ */
+   border-radius: 16px;
+    box-sizing: border-box;
+   /*радиус скругления углов
+    background-image: url(../Форма_desktop.png);
+	background-position: 50% 50%;
+-webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+background-repeat: no-repeat;
+background-attachment: scroll;	*/ 
+}	
+ }  
+</style>
+
+
+<script> 
+$(document).ready(function($){
+$('#pr1').click(function() {
+  var textContent = $('#pr1').text();
+  $('#text-id').text(textContent);
+});
+
+$('#pr2').click(function() {
+  var textContent = $('#pr2').text();
+  $('#text-id').text(textContent);
+});
+
+$('#pr3').click(function() {
+  var textContent = $('#pr3').text();
+  $('#text-id').text(textContent);
+});
+    $('#pr4').click(function() {
+  var textContent = $('#pr4').text();
+  $('#text-id').text(textContent);
+});
+$('#pr5').click(function() {
+  var textContent = $('#pr5').text();
+  $('#text-id').text(textContent);
+});
+$('#pr6').click(function() {
+  var textContent = $('#pr6').text();
+  $('#text-id').text(textContent);
+});
+$('#pr7').click(function() {
+  var textContent = $('#pr7').text();
+  $('#text-id').text(textContent);
+});
+$('#pr8').click(function() {
+  var textContent = $('#pr8').text();
+  $('#text-id').text(textContent);
+});
+
+
+});
+</script>
+
+
+
+
+
+</head>
+<body>
+
+<div id="iw-modal" class="iw-modal">
+       <div class="iw-modal-wrapper">
+              
+                 <div class="iw-modal-header   ">
+                  	
+                  	<a  href="#close" title="Закрыть" class="iw-close"  style='  color:#000; '  > x
+					
+				 </a>
+                 
+		
+      <form method="post" action="">
+	  <div class="title1" >Название  товара
+						<br><p  id="text-id"  ></p>
+						</div>
+					
+	  <div class="title2" >Изменить товар
+						</div>
+ 
+	  <input type="submit"  class="frectangle_5_3 " name="submit" value="Готов" />
+	  
+			
+         
+<textarea  id="text-new"    name='mess' rows='5' cols='50'></textarea>
+  
+    </form></div>
+  	</div>	
+</div>
+<div class="wrapperl">
+<div class="header">
+
+<div class="header-button">
+<button style="cursor: pointer;" id="btn"   class="dropbtn"     onclick="swapStyleSheet('grid.css')"><i class="fa fa-th-large"></i> Grid</button>
+<button  style="cursor: pointer;" id="btn"  class="dropbtn"   onclick="swapStyleSheet('list.css')"><i class="fa fa-bars"></i> List</button> 
+</div> 
+<div class="header-list">
+ <div class="dropdown">
+  <button  id="btn"  class="dropbtn">Каталог оборудования</button>
+    <ul id="menu">
+     <li>
+        <a href="#">link1</a>
+        <ul>
+          <li  >
+		  
+		         <a href="#">link2</a>
+                  <ul  id="link3"   >
+                    <li>
+					
+					      <a href="#">link3</a>
+                          <ul  id="link3"   >
+                            <li><a href="#">link4</a></li>
+                            <li><a href="#">link4</a></li>
+                             <li><a href="#">link4</a></li>
+                            <li><a href="#">link4</a></li>
+                   </ul>
+		  
+					</li>
+                    <li><a href="#">link3</a></li>
+                    <li><a href="#">link3</a></li>
+                    <li><a href="#">link3</a></li>
+                   </ul>
+		  
+		  
+		  </li>
+          <li><a href="#">link2</a></li>
+          <li><a href="#">link2</a></li>
+          <li><a href="#">link2</a></li>
+        </ul>
+		
+      </li>
+      
+	  
+	  
+			
+		<li>
+        <a href="#">link1</a>
+        <ul>
+          <li><a href="#">link2</a></li>
+          <li><a href="#">link2</a></li>
+          <li><a href="#">link2</a></li>
+          <li><a href="#">link2</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">link1</a>
+        <ul>
+          <li><a href="#">link2</a></li>
+          <li><a href="#">link2</a></li>
+          <li><a href="#">link2</a></li>
+          <li><a href="#">link2</a></li>
+        </ul>
+      </li>
+      <li><a href="#">link1</a></li>
+    </ul>
+	</div>
+</div> 
+
+</div> 
+
+
+
+
+<div class="header-products">
+ <div class="header-products-product-title">
+	      <p>Модель</p>	
+           </div>
+		   <div class= "header-products-product-price">
+	         Цена
+             </div> 
+		    <div class="header-products-product-title3">
+	      <p>Описание</p>	
+           </div>  
+		   
+</div> 
+
+
+
+
+
+
+<ul   class="products clearfix "       >
+	<li  class="ui-state-default"      >
+	 <div class="product-wrapper    ">
+	 <div class="product  "  > 
+	      <div class="product-id">
+	      F10023
+           </div> 
+	      <div class="product-photo">
+	      <img src="1.png" alt="">
+           </div>
+	 
+	       <div  class="product-title">
+	      <p   id="pr1"    ><a href="#iw-modal" style=" text-decoration:none">Болгарка Ski 9005LA1</a></p>	
+           </div>
+		    <div class= "product-price">
+	         1000 руб.
+             </div>  
+		  
+        <div class="product-title3">
+	      <p>тип питания: сетевой
+            макс. диаметр диска 115 мм
+            макс. частота вращения диска 11000 об/мин
+            вес 1.6 кг</p>	
+           </div>  
+						
+		<div class="zamer3 ">
+       
+       <a href="#" style=" font-size: 100%; color:#000; text-decoration:none">Купить</a>
+	   
+       </div>		
+	</div>
+	 </div>
+	
+
+	</li>
+	<li class="ui-state-default"   >
+	     <div class="product-wrapper    ">
+	 <div     class="product     ">
+	      <div class="product-id">
+	      F10023
+           </div> 
+	      <div class="product-photo">
+	      <img src="1.png" alt="">
+           </div>
+	
+	       <div  class="product-title">
+	      <p   id="pr2"    ><a href="#iw-modal" style=" text-decoration:none">Болгарка Ski 9005LA2</a></p>	
+           </div>
+		    <div class= "product-price">
+	         2000 руб.
+             </div>  
+		  
+        <div class="product-title3">
+	      <p>тип питания: сетевой
+            макс. диаметр диска 115 мм
+            макс. частота вращения диска 11000 об/мин
+            вес 1.6 кг</p>	
+           </div>  
+						
+		<div class="zamer3 ">
+       
+       <a href="#" style=" font-size: 100%; color:#000; text-decoration:none">Купить</a>
+	   
+       </div>		
+	</div>
+	 </div>
+	
+	
+		
+	</li>
+	<li class="ui-state-default"   >
+		<div class="product-wrapper    ">
+	 <div    class="product    ">
+	      <div class="product-id">
+	      F10023
+           </div> 
+	      <div class="product-photo">
+	      <img src="1.png" alt="">
+           </div>
+	
+	       <div  class="product-title">
+	      <p   id="pr3"    ><a href="#iw-modal" style=" text-decoration:none">Болгарка Ski 9005LA3</a></p>	
+           </div>
+		    <div class= "product-price">
+	         3000 руб.
+             </div>  
+		  
+        <div class="product-title3">
+	      <p>тип питания: сетевой
+            макс. диаметр диска 115 мм
+            макс. частота вращения диска 11000 об/мин
+            вес 1.6 кг</p>	
+           </div>  
+						
+		<div class="zamer3 ">
+       
+       <a href="#" style=" font-size: 100%; color:#000; text-decoration:none">Купить</a>
+	   
+       </div>		
+	</div>
+	 </div>
+	
+
+	</li>
+	<li class="ui-state-default"      >
+		 <div class="product-wrapper    ">
+	 <div    class="product    ">
+	      <div class="product-id">
+	      F10023
+           </div> 
+	      <div class="product-photo">
+	      <img src="1.png" alt="">
+           </div>
+	
+	      <div  class="product-title">
+	      <p   id="pr4"    ><a href="#iw-modal" style=" text-decoration:none">Болгарка Ski 9005LA4</a></p>	
+           </div>
+		    <div    class= "product-price">
+	         4000 руб.
+             </div>  
+		  
+        <div class="product-title3">
+	      <p>тип питания: сетевой
+            макс. диаметр диска 115 мм
+            макс. частота вращения диска 11000 об/мин
+            вес 1.6 кг</p>	
+           </div>  
+						
+		<div class="zamer3 ">
+       
+       <a href="#" style=" font-size: 100%; color:#000; text-decoration:none">Купить</a>
+	   
+       </div>		
+	</div>
+	 </div>
+	
+	</li>
+	<li class="ui-state-default"   >
+		 <div class="product-wrapper    ">
+	 <div   class="product    ">
+	      <div class="product-id">
+	      F10023
+           </div> 
+	      <div class="product-photo">
+	      <img src="1.png" alt="">
+           </div>
+	
+	       <div  class="product-title">
+	      <p   id="pr5"    ><a href="#iw-modal" style=" text-decoration:none">Болгарка Ski 9005LA5</a></p>	
+           </div>
+		    <div class= "product-price">
+	         5000 руб.
+             </div>  
+		  
+        <div class="product-title3">
+	      <p>тип питания: сетевой
+            макс. диаметр диска 115 мм
+            макс. частота вращения диска 11000 об/мин
+            вес 1.6 кг</p>	
+           </div>  
+						
+		<div class="zamer3 ">
+       
+       <a href="#" style=" font-size: 100%; color:#000; text-decoration:none">Купить</a>
+	   
+       </div>		
+	</div>
+	 </div>
+	
+	</li>
+	<li  class="ui-state-default"  >
+		 <div class="product-wrapper    ">
+	 <div     class="product    ">
+	      <div class="product-id">
+	      F10023
+           </div> 
+	      <div class="product-photo">
+	      <img src="1.png" alt="">
+           </div>
+	
+	       <div  class="product-title">
+	      <p   id="pr6"    ><a href="#iw-modal" style=" text-decoration:none">Болгарка Ski 9005LA6</a></p>	
+           </div>
+		    <div class= "product-price">
+	         6000 руб.
+             </div>  
+		  
+        <div class="product-title3">
+	      <p>тип питания: сетевой
+            макс. диаметр диска 115 мм
+            макс. частота вращения диска 11000 об/мин
+            вес 1.6 кг</p>	
+           </div>  
+						
+		<div class="zamer3 ">
+       
+       <a href="#" style=" font-size: 100%; color:#000; text-decoration:none">Купить</a>
+	   
+       </div>		
+	</div>
+	 </div>
+	
+	</li>
+	<li  class="ui-state-default"  >
+		 <div class="product-wrapper    ">
+	 <div     class="product    ">
+	      <div class="product-id">
+	      F10023
+           </div> 
+	      <div class="product-photo">
+	      <img src="1.png" alt="">
+           </div>
+	
+	       <div  class="product-title">
+	      <p   id="pr7"    ><a href="#iw-modal" style=" text-decoration:none">Болгарка Ski 9005LA7</a></p>	
+           </div>
+		    <div class= "product-price">
+	         7000 руб.
+             </div>  
+		  
+        <div class="product-title3">
+	      <p>тип питания: сетевой
+            макс. диаметр диска 115 мм
+            макс. частота вращения диска 11000 об/мин
+            вес 1.6 кг</p>	
+           </div>  
+						
+		<div class="zamer3 ">
+       
+       <a href="#" style=" font-size: 100%; color:#000; text-decoration:none">Купить</a>
+	   
+       </div>		
+	</div>
+	 </div>
+	
+	</li>
+	<li  class="ui-state-default"   >
+		 <div class="product-wrapper    ">
+	 <div     class="product    ">
+	      <div class="product-id">
+	      F10023
+           </div> 
+	      <div class="product-photo">
+	      <img src="1.png" alt="">
+           </div>
+	
+	       <div  class="product-title">
+	      <p   id="pr8"    ><a href="#iw-modal" style=" text-decoration:none">Болгарка Ski 9005LA8</a></p>	
+           </div>
+		    <div class= "product-price">
+	         8000 руб.
+             </div>  
+		  
+        <div class="product-title3">
+	      <p>тип питания: сетевой
+            макс. диаметр диска 115 мм
+            макс. частота вращения диска 11000 об/мин
+            вес 1.6 кг</p>	
+           </div>  
+						
+		<div class="zamer3 ">
+       
+       <a href="#" style=" font-size: 100%; color:#000; text-decoration:none">Купить</a>
+	   
+       </div>
+   </div>
+	</div>
+	
+	
+	
+	 
+	
+	</li>
+</ul>
+
+
+</div>
+
+
+<br><br><br>
+
+<script src="Sortable.js"></script>
+
+
+<script type="text/javascript">
+
+
+
+	var elements = document.getElementsByClassName('products');
+
+	for (var i = 0; i < elements.length; i++) {
+		new Sortable(elements[i], {
+		
+			group: 'shared',tolerance: "pointer",
+			 opacity: 0.9,
+			  tolerance: "pointer",
+			 animation: 150,
+		fallbackOnBody: true,
+		swapThreshold: 0.65,
+			
+			invertSwap: true
+		});
+	}
+</script>
+
+
+
+           
+        
+
+
+</script> 
+
+    
+</body>
+</html>
+
+
+
