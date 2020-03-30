@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Валидность скобок</title>
+  
+ <script>
+        function checkString()
+        {
+       
+       document.getElementById('test').innerHTML =  ' ';  
+       brs = document.getElementById('test1').value;
+         
+          let opening = {
+      '[': ']',
+      '{': '}',
+      '(': ')',
+      '<': '>',
+    };
+
+    let stack = [];
+    let ret = '';
+
+    for(let i = 0; i < brs.length; i++){
+    
+    
+      let c = brs[i];
+     
+      if(opening[c]){
+        stack.push(c);
+      } else {
+        if(stack.length === 0){
+        document.getElementById('test').innerHTML =  ' Строку не обработать  '; 
+            return null;
+            
+        }
+      
+        let br = stack.pop();
+
+        c = opening[br]; 
+      }
+
+      ret += c;    
+    }
+    if (stack.length > 0){
+      document.getElementById('test').innerHTML =  ' Строку не обработать  '; 
+      return null;
+      
+    }
+ 
+           document.getElementById('test').innerHTML = (ret) + '.'; 
+       
+           
+        }
+ </script> 
+  
+<script>
+        function checkStringpr()
+        {
+       
+       document.getElementById('testt').innerHTML =  ' ';  
+       input = document.getElementById('test11').value;
+          
+           
+            let stack = [];
+            for (const ch of input.split("")) 
+            {
+                switch (ch)
+                {
+                    case "(":{
+                   
+                        stack.push(1) ;
+                        }
+                        break;
+                    case "[":
+                        stack.push(2);
+                        break;
+                    case "{":
+                        stack.push(3);
+                        break;
+                    case "}":
+                        if (stack[stack.length - 1] != 3) return false;
+                        stack.pop();
+                        break;
+                    case "]":
+                        if (stack[stack.length - 1] != 2) return false;
+                        stack.pop();
+                        break;
+                  case ")":
+                  
+               
+                      if (stack[stack.length - 1] != 1)
+                        return false;
+                        stack.pop();
+                       
+                        break;
+                        
+                                   
+                    
+                        
+                    default:
+                        break;
+                }
+            }
+           
+           
+            
+             
+            
+          if (stack.length == 0) {
+           document.getElementById('testt').innerHTML =  'true '; 
+        } else {
+            document.getElementById('testt').innerHTML =  ' false   '; 
+        }           
+           
+         
+
+            
+        }
+ </script> 
+  
+  
+  
+</head>
+<body>
+<h2>Часть 4 теста</h2>
+
+<h4>Функция, принимающую на вход количество пар скобок <br>и возвращающая валидную строку, вида «({})()»,<br> в которой соблюдена правильная вложенность всех скобок.</h4>
+
+Введите строку для исправления: <input id="test1">
+  <button  onclick="checkString()">Исправить </button>
+ 
+<p>Результаты  : <span id="test"  ><span><p/>
+<br><br>
+<h4>Функция, проверяющаю валидность работы первой функции.<br> Функция принимает на вход строку из задачи выше и<br>возвращает true || false. (есть ошибки вложенности или нет).</h4>
+
+ Введите строку для проверки: <input id="test11">
+  <button  onclick="checkStringpr()">Проверить  </button>
+ 
+<p>Результаты проверки : <span id="testt"  ><span><p/>
+ 
+</body>
+</html>
+
+
+
