@@ -102,7 +102,7 @@ body { height: 100vh;
     }
     
 }
-@media (max-width: 720px) {
+@media (max-width: 620px) {
     .banner__left {
         display: none;
     }
