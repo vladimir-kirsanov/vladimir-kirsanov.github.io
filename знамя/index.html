@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Баннер</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="banner">
+            <div class="banner__content">
+                <div class="banner__left">
+                    <img src="images/image1.png" alt="" class="banner__image active">
+                    <img src="images/image2.png" alt="" class="banner__image">
+                    <img src="images/image3.png" alt="" class="banner__image">
+                    <img src="images/image4.png" alt="" class="banner__image">
+                </div>
+                <img src="images/center.png" alt="" class="banner__center">
+                <form action="" class="banner__form">
+                    <input type="text" name="name" placeholder="Ваше имя">
+                    <input type="email" name="email" placeholder="E-mail">
+                    <input type="text" name="phone" placeholder="Телефон">
+                    <input type="submit" value="Записаться">
+                    <a href="" class="banner__link"><img src="images/englishpapa.png" alt=""></a>
+                </form>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script>
+var dpt = window.devicePixelRatio;
+var widthM = window.screen.width;
+var widthH = window.screen.height;
+console.log(dpt+' widt     '+widthM+'  heigh '+widthH+' ');
+        $( document ).ready(function() {
+            $(window).on("load resize",function(e){
+                if ($(window).width() > 1000 && $(window).width() < 2000) {
+                    $(".banner__content").css("transform","scale(calc("+($(window).width())/2000+"))");
+                } else {
+                    if ($(window).width() > 720 && $(window).width() <= 1000) {
+                        $(".banner__content").css("transform","scale(calc("+($(window).width())/1100+"))");
+                    } else {
+                        $(".banner__content").css("transform","scale(calc(1))");
+                    }
+                }
+                if($(window).width() <= 1000) {
+                    $(".banner__center").attr("src","images/center-mob.png");
+                } else {
+                    $(".banner__center").attr("src","images/center.png");
+                }
+                
+            });
+
+            var time = 5000, i = 0;
+            setInterval(function(){
+                i++;
+                if (i == 5) {i = 1;}
+                $(".banner__left img").removeClass("active");
+                $(".banner__left img:nth-child("+i+")").addClass("active");
+            }, time);
+
+             $('.banner__form').submit(function() {
+                event.preventDefault();
+                $.ajax({
+                type: "POST",
+                url: "https://englishpapa.by/php/mail.php",
+                data: $(this).serialize()
+                }).done(function() {
+                    $('.banner__form').trigger('reset');
+                    $('.banner__form input[type="submit"]').attr("value","Отправлено");
+                    setTimeout(function(){
+                        $('.banner__form input[type="submit"]').attr("value","Записаться");
+                    }, 3000);
+                });
+                return false;
+            });
+            
+        });
+            
+        </script>
+    </body>
+</html>
